@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
 import it.unibo.bank.api.AccountHolder;
 import it.unibo.bank.api.BankAccount;
+ 
 
 public class TestSimpleBankAccount {
     private AccountHolder mRossi;
@@ -55,7 +56,7 @@ public class TestSimpleBankAccount {
             bankAccount.deposit(aBianchi.getUserID(), 10000);
             Assertions.fail();
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("ID not corresponding: cannot perform transaction.", e.getMessage());
+            Assertions.assertEquals("ID not corresponding: cannot perform transaction", e.getMessage());
         }
         // Alternative (with reflection): Assertions.assertThrows
     }
